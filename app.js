@@ -134,10 +134,12 @@ function clearTasks() {
     // taskList.innerHTML = '';
 
     // Faster
-    while (taskList.firstChild) {
-        taskList.removeChild(taskList.firstChild);
-    }
+    if (confirm("Are you sure, you want to clear All tasks?")) {
+        while (taskList.firstChild) {
 
+            taskList.removeChild(taskList.firstChild);
+        }
+    }
     // https://jsperf.com/innerhtml-vs-removechild
 
     // Clear from LS
